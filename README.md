@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ```
 
 ### Run The Fully Automatic Solve 
-This uses Selenium to open the Wordle page in a browser and solves the puzzle of the day without any user input.
+This uses Selenium to open the Wordle website in a browser and solve the puzzle of the day without any user input.
 ```
 python browser_solver.py
 ```
