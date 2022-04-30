@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+.lam
+venv
+db.sqlite3
+__pycache__
