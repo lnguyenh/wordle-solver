@@ -17,13 +17,18 @@ COMMON_STARTING_WORDS = [
 
 def score_word(word):
     score = 0
-    num_letters = len(set(list(word)))
+    letters = list(word)
+    num_letters = len(set(letters))
     for letter in list("earot"):
         if letter in word:
             score += 6
     for letter in list("lisnc"):
         if letter in word:
             score += 5
+
+    # decrease score of plural words
+    if letters[4] == "s":
+        score -= 5
     return score * num_letters * num_letters
 
 
