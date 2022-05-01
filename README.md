@@ -1,7 +1,7 @@
 # Wordle Solver
 
 ## About
-The past couple weeks our family has solved the New-York-Times Wordle puzzle daily (https://www.nytimes.com/games/wordle/index.html).
+The past couple weeks, the New-York-Times Wordle puzzle has been a daily family-fun routine (https://www.nytimes.com/games/wordle/index.html).
 
 I thought it could be fun to make a solver in Python. This repo is a playground for it.
 

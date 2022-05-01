@@ -80,7 +80,11 @@ class BaseSolver:
         words = list(self.words)
         for word in words:
             for letter in self.knowledge.exclude:
-                if letter in word:
+                if (
+                    letter in word
+                    and letter not in self.knowledge.correct
+                    and letter not in self.knowledge.almost
+                ):
                     self.words.discard(word)
                     break
             for letter, positions in self.knowledge.correct.items():
