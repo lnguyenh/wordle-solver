@@ -54,8 +54,8 @@ class Solver(BaseSolver):
                     self.knowledge.correct[letter].add(int(index))
                 elif state == "absent":
                     self.knowledge.exclude.add(letter)
-                elif state == "correct":
-                    self.knowledge.almost[letter].add(int(index) - 1)
+                elif state == "present":
+                    self.knowledge.almost[letter].add(int(index))
 
             if num_correct == 5:
                 sleep(3)

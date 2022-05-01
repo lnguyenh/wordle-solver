@@ -35,7 +35,7 @@ def get_homemade_best_candidate(available_words, knowledge, attempts_used):
     known_letters = set(list(knowledge.correct.keys()) + list(knowledge.almost.keys()))
     if attempts_used < 3 and len(known_letters) < 2:
         to_exclude = set.union(known_letters, knowledge.exclude)
-        return sorted(
+        words_with_other_letters = sorted(
             [
                 word
                 for word in WORDS
@@ -43,7 +43,8 @@ def get_homemade_best_candidate(available_words, knowledge, attempts_used):
             ],
             key=score_word,
             reverse=True,
-        )[0]
+        )
+        return words_with_other_letters[0]
 
     scored_candidates = sorted(available_words, key=score_word, reverse=True)
     return scored_candidates[0]
