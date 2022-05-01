@@ -1,5 +1,4 @@
-from constants import WORDS
-from base import Knowledge, score_word, BaseSolver
+from base import Knowledge, BaseSolver
 
 
 def pairwise(iterable):
@@ -12,17 +11,12 @@ class SolverHelper(BaseSolver):
         super().__init__()
         print(f"Wordle solver initialized")
 
-    def find_best_candidates(self):
-        words = list(self.words)
-        scored_candidates = sorted(words, key=score_word, reverse=True)
-        return scored_candidates[:5]
-
-    def print_best_candidates(self):
-        print(f"Best candidates: {self.find_best_candidates()} [{len(self.words)}]")
+    def print_best_candidate(self):
+        print(f"Best candidate: {self.get_best_candidate()} [{len(self.words)}]")
 
     def run(self):
         while True:
-            self.print_best_candidates()
+            self.print_best_candidate()
             user_input = input(
                 "Enter command (stop, reset, correct, almost, exclude):\n"
             )

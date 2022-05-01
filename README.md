@@ -1,9 +1,9 @@
 # Wordle Solver
 
 ## About
-The past couple weeks, the New-York-Times Wordle puzzle has been a daily family-fun routine (https://www.nytimes.com/games/wordle/index.html).
+Our family discovered the New-York-Times Wordle game a couple weeks ago (https://www.nytimes.com/games/wordle/index.html). Since then it has been a fun daily activity that we shared with our kids.
 
-I thought it could be fun to make a solver in Python. This repo is a playground for it.
+It started to itch me to make a program able to solve the daily puzzles and this repo is a playground for this.
 
 ## Quickstart
 
@@ -17,13 +17,13 @@ pip install -r requirements.txt
 ### Run The Fully Automatic Solve 
 This uses Selenium to open the Wordle website in a browser and solve the puzzle of the day without any user input.
 ```
-python browser_solver.py
+python -m solvers.browser_solver
 ```
 
 ### Run The Assistant Solver
 This is a CLI tool where you tell the program about new constraints, and it will suggest a few words for the next guess.
 ```
-python cli_assistant_solver.py
+python -m solvers.cli_assistant_solver
 ```
 
 Example usage:
@@ -39,7 +39,7 @@ almost x 1 v 2
 ```
 
 ### Run A Complete Simulation
-You choose a solution word and a starting word and let the program find the solution. Each guess is printed. 
+This is a CLI Wordle simulation. The user chooses a solution word and lets the program find it. Each guess along the way is printed. 
 ```
-python simulator_solver.py
+python -m solvers.simulator_solver
 ```

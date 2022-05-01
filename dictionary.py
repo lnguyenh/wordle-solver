@@ -1,4 +1,4 @@
-WORDS  = [
+WORDS = [
     "aahed",
     "aalii",
     "aargh",
@@ -3424,7 +3424,7 @@ WORDS  = [
     "gawps",
     "gawsy",
     "gayal",
-"cigar",
+    "cigar",
     "rebut",
     "sissy",
     "humph",

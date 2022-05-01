@@ -2,11 +2,10 @@ from base import BaseSolver
 
 
 class Game(BaseSolver):
-    def __init__(self, solution, starter):
+    def __init__(self, solution):
         super().__init__()
         self.solution = solution
-        self.starter = starter
-        print(f"Targeting [{self.solution}] starting from [{self.starter}]")
+        print(f"Targeting [{self.solution}]")
 
     def evaluate(self, candidate):
         for i, letter in enumerate(candidate):
@@ -20,7 +19,7 @@ class Game(BaseSolver):
 
     def run(self):
         num_attempts = 1
-        candidate = self.starter
+        candidate = self.get_best_candidate()
         print(f"attempt #{num_attempts}: {candidate}")
         while candidate != self.solution:
             self.evaluate(candidate)
@@ -31,5 +30,5 @@ class Game(BaseSolver):
 
 
 if __name__ == "__main__":
-    game = Game("larva", "crane")
+    game = Game("forgo")
     game.run()

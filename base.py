@@ -1,56 +1,7 @@
 from collections import defaultdict
 
-from constants import WORDS
-
-SCRABBLE_SCORE = {
-    "a": 1,
-    "c": 3,
-    "b": 3,
-    "e": 1,
-    "d": 2,
-    "g": 2,
-    "f": 4,
-    "i": 1,
-    "h": 4,
-    "k": 5,
-    "j": 8,
-    "m": 3,
-    "l": 1,
-    "o": 1,
-    "n": 1,
-    "q": 10,
-    "p": 3,
-    "s": 1,
-    "r": 1,
-    "u": 1,
-    "t": 1,
-    "w": 4,
-    "v": 4,
-    "y": 4,
-    "x": 8,
-    "z": 10,
-}
-
-
-def scrabble_score(word):
-    return -sum([SCRABBLE_SCORE[letter] for letter in list(word)])
-
-
-def base_score(word):
-    score = 0
-    num_letters = len(set(list(word)))
-    for letter in list("earot"):
-        if letter in word:
-            score += 5
-    for letter in list("lisnc"):
-        if letter in word:
-            score += 4
-    return score * num_letters
-
-
-def score_word(word):
-    return base_score(word)
-    # return scrabble_score(word)
+from dictionary import WORDS
+from strategies import WordleStrategies
 
 
 class Knowledge:
@@ -70,6 +21,7 @@ class BaseSolver:
     def __init__(self):
         self.knowledge = None
         self.words = None
+        self.attempts_used = 0
         self.reset()
 
     def reset(self):
@@ -100,5 +52,6 @@ class BaseSolver:
 
     def get_best_candidate(self):
         words = list(self.words)
-        scored_candidates = sorted(words, key=score_word, reverse=True)
-        return scored_candidates[0]
+        candidate = WordleStrategies.HOMEMADE(words, self.knowledge, self.attempts_used)
+        self.attempts_used += 1
+        return candidate

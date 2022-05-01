@@ -14,11 +14,12 @@ from base import BaseSolver
 class Solver(BaseSolver):
     def __init__(self):
         super().__init__()
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        self.driver = None
         self.prepare_game()
         print(f"Wordle selenium solver initialized")
 
     def prepare_game(self):
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         self.driver.get("https://www.nytimes.com/games/wordle/index.html")
         self.driver.find_element(
             by=By.XPATH, value='//*[@id="pz-gdpr-btn-accept"]'
@@ -55,13 +56,17 @@ class Solver(BaseSolver):
                     self.knowledge.exclude.add(letter)
                 elif state == "correct":
                     self.knowledge.almost[letter].add(int(index) - 1)
+
             if num_correct == 5:
                 sleep(3)
                 break
             else:
                 self.update_words()
+
+        self.driver.quit()
         return
 
 
-solver = Solver()
-solver.run()
+if __name__ == "__main__":
+    solver = Solver()
+    solver.run()
