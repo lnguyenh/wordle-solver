@@ -30,5 +30,5 @@ class Game(BaseSolver):
 
 
 if __name__ == "__main__":
-    game = Game("forgo")
+    game = Game("zesty")
     game.run()

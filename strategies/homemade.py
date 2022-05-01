@@ -20,11 +20,11 @@ def score_word(word):
     num_letters = len(set(list(word)))
     for letter in list("earot"):
         if letter in word:
-            score += 7
+            score += 6
     for letter in list("lisnc"):
         if letter in word:
             score += 5
-    return score * num_letters
+    return score * num_letters * num_letters
 
 
 def get_homemade_best_candidate(available_words, knowledge, attempts_used):
