@@ -1,7 +1,9 @@
 # Wordle Solver
 
 ## About
-Our family discovered the New-York-Times Wordle game a couple weeks ago (https://www.nytimes.com/games/wordle/index.html). Since then it has been a fun daily activity that we shared with our kids.
+Our family discovered the New-York-Times Wordle game a couple weeks ago.
+The game can be found here https://www.nytimes.com/games/wordle/index.html.
+Since then it has been a fun daily activity that we shared with our kids.
 
 It started to itch me to make a program able to solve the daily puzzles and this repo is a playground for this.
 
