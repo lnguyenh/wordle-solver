@@ -9,6 +9,11 @@ It started to itch me to make a program able to solve the daily puzzles and this
 
 ## Quickstart
 
+### Disclaimer
+Last tested on December 6th 2022 on Mac OS.
+
+Chrome updates and Wordle code-changes may break the fully automatic solver
+
 ### Setup
 ```
 python3 -m venv venv
