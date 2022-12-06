@@ -36,6 +36,7 @@ class Solver(BaseSolver):
                 )
             )
         ).click()
+        sleep(0.5)
 
         # Click somewhere in the game
         WebDriverWait(self.driver, 20).until(
@@ -46,6 +47,7 @@ class Solver(BaseSolver):
                 )
             )
         ).click()
+        sleep(0.5)
 
     def run(self):
         for row in range(6):
